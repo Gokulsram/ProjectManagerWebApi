@@ -1,56 +1,100 @@
-﻿using AutoMapper;
+using Moq;
 using NUnit.Framework;
+using ProjectManagerBusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectManagerBusinessLayer;
-using ProjectManagerDataLayer;
-
 
 namespace ProjectManagerWebApi.Tests
 {
     [TestFixture]
     public class TaskControllerTest
     {
-        UsersController contactsController;
-        IEnumerable<UsersModel> taskModels;
-        UsersRepository repository = new UsersRepository();
+        Mock<ITaskBusiness> mock = new Mock<ITaskBusiness>();
 
         [SetUp]
         public void Setup()
         {
-            Mapper.Reset();
-            Mapper.Initialize(cfg =>
-            {
-                cfg.CreateMap<UsersModel, User>()
-                  .ForMember(vm => vm.User_ID, map => map.MapFrom(m => m.UserId))
-                .ForMember(vm => vm.FirstName, map => map.MapFrom(m => m.FirstName))
-                .ForMember(vm => vm.LastName, map => map.MapFrom(m => m.LastName))
-                .ForMember(vm => vm.Employee_ID, map => map.MapFrom(m => m.EmployeeId))
-                .ForMember(vm => vm.Task_ID, map => map.MapFrom(m => m.TaskId))
-                .ForMember(vm => vm.Project_ID, map => map.MapFrom(m => m.ProjectId));
-
-                cfg.CreateMap<User, UsersModel>()
-                    .ForMember(vm => vm.UserId, map => map.MapFrom(m => m.User_ID))
-                  .ForMember(vm => vm.FirstName, map => map.MapFrom(m => m.FirstName))
-                  .ForMember(vm => vm.LastName, map => map.MapFrom(m => m.LastName))
-                  .ForMember(vm => vm.EmployeeId, map => map.MapFrom(m => m.Employee_ID))
-                  .ForMember(vm => vm.TaskId, map => map.MapFrom(m => m.Task_ID))
-                  .ForMember(vm => vm.ProjectId, map => map.MapFrom(m => m.Project_ID));
-            });
-
-            UserBusiness business = new UserBusiness(repository);
 
         }
 
-        [Test]
+        [Test, Order(1)]
         public void GetAllTaskTest()
         {
-            // System.IO.File.AppendAllText(@"C:\Gokul_FSE\Git\logs.txt", "Step 1 ");
-            UserBusiness business = new UserBusiness(repository);
-            contactsController = new UsersController(business);
-            //Number of records
-            taskModels = contactsController.Get();
-            Assert.IsTrue(taskModels.Count() > 0);
+            mock.Setup(setup => setup.GetAllTasks()).Returns(new List<TaskModel> { new TaskModel { TaskId = 100, TaskName = "Task Control Get Task", Priority = 1, StartDate = DateTime.Now.Date } });
+            TaskController taskController = new TaskController(mock.Object);
+
+            IEnumerable<TaskModel> resultSet = taskController.Get();
+
+            Assert.IsNotNull(resultSet);
+            Assert.AreEqual(1, resultSet.Count());
+            Assert.AreEqual("Task Control Get Task", resultSet.ElementAt(0).TaskName);
         }
+
+        [Test, Order(2)]
+        public void GetAllParentTasks_Test()
+        {
+            mock.Setup(setup => setup.GetParentTask()).Returns(new List<ParentTaskModel> { new ParentTaskModel { ParentTaskId = 100, ParentTask = "Parent Task Test" } });
+            TaskController taskController = new TaskController(mock.Object);
+
+            IEnumerable<ParentTaskModel> resultSet = taskController.GetParentTask();
+
+            Assert.IsNotNull(resultSet);
+            Assert.AreEqual(1, resultSet.Count());
+            Assert.AreEqual("Parent Task Test", resultSet.ElementAt(0).ParentTask);
+        }
+
+        [Test, Order(5)]
+        public void GetTaskById_Test()
+        {
+            mock.Setup(setup => setup.GetTaskById(100)).Returns(new TaskModel { TaskId = 100, TaskName = "Task Control Get Task By Id", Priority = 100, StartDate = DateTime.Now.Date });
+            TaskController taskController = new TaskController(mock.Object);
+
+            TaskModel resultSet = taskController.Get(100);
+
+            Assert.AreEqual("Task Control Get Task By Id", resultSet.TaskName);
+        }
+
+        [Test, Order(3)]
+        public void AddTask_Test()
+        {
+            mock.Setup(setup => setup.InsertTask(It.IsAny<TaskModel>())).Returns(true);
+            TaskController taskController = new TaskController(mock.Object);
+
+            bool isResult = taskController.Post(new TaskModel());
+
+            Assert.AreEqual(true, isResult);
+        }
+
+        [Test, Order(4)]
+        public void EditTask_Test()
+        {
+            mock.Setup(setup => setup.UpdateTask(new TaskModel { TaskId = 100, TaskName = "Update Task Edit", Priority = 1, StartDate = DateTime.Now.Date })).Returns(true);
+            TaskController taskController = new TaskController(mock.Object);
+
+            bool isResult = taskController.Post(new TaskModel { TaskId = 100, TaskName = "Update Task Edit - Edit", Priority = 99, StartDate = DateTime.Now.Date });
+            Assert.AreEqual(true, isResult);
+
+        }
+
+        [Test, Order(6)]
+        public void EndTask_Test()
+        {
+            mock.Setup(setup => setup.EndTask(100)).Returns(true);
+            TaskController taskController = new TaskController(mock.Object);
+            bool isResult = taskController.EndTask(100);
+            Assert.AreEqual(true, isResult);
+        }
+
+        [Test, Order(7)]
+        public void DeleteTask_Test()
+        {
+            mock.Setup(setup => setup.DeleteTask(100)).Returns(true);
+            TaskController taskController = new TaskController(mock.Object);
+            bool isResult = taskController.Delete(100);
+            Assert.AreEqual(true, isResult);
+        }
+
+
     }
 }
