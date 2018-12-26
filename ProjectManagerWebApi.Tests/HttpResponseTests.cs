@@ -3,6 +3,7 @@ using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Configuration;
 
 namespace ProjectManagerWebApi.Tests
 {
@@ -16,9 +17,9 @@ namespace ProjectManagerWebApi.Tests
         [SetUp]
         public void SetUP()
         {
-            client = new HttpClient();
 
-            client.BaseAddress = new Uri("http://localhost:52781/api/");
+            client = new HttpClient();
+            client.BaseAddress = new Uri("http://172.18.4.6/ProjectManagerAPI/api/");
             response = client.GetAsync("GetAllUsers").Result;
         }
 
