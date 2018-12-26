@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerWebApi", "ProjectManagerWebApi\ProjectManagerWebApi.csproj", "{0E3B21C4-AA7A-40BD-A537-0EE4179CA6EE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerBusinessLayer", "ProjectManagerBusinessLayer\ProjectManagerBusinessLayer.csproj", "{571C16DA-C064-4A76-A7C0-8C8156B4CC34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerDataLayer", "ProjectManagerDataLayer\ProjectManagerDataLayer.csproj", "{7601236C-9A17-4339-9A85-40196414FA2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagerNBenchLoadTest", "ProjectManagerNBenchLoadTest\ProjectManagerNBenchLoadTest.csproj", "{73FB4DBB-414D-480E-B690-0B833CD901D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7601236C-9A17-4339-9A85-40196414FA2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7601236C-9A17-4339-9A85-40196414FA2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7601236C-9A17-4339-9A85-40196414FA2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FB4DBB-414D-480E-B690-0B833CD901D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FB4DBB-414D-480E-B690-0B833CD901D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FB4DBB-414D-480E-B690-0B833CD901D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FB4DBB-414D-480E-B690-0B833CD901D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
