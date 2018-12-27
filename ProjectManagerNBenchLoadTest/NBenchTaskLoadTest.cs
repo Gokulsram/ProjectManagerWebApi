@@ -1,4 +1,4 @@
-﻿using NBench;
+using NBench;
 using System.Collections.Generic;
 using ProjectManagerBusinessLayer;
 using ProjectManagerDataLayer;
@@ -85,39 +85,6 @@ namespace ProjectManagerNBenchLoadTest
 
         }
 
-        [PerfBenchmark(Description = "--------NBench Result for GetAllParentTask_LoadTest----------",
-                                                      NumberOfIterations = 2,
-                                                      RunMode = RunMode.Throughput,
-                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
-
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-
-        public void GetAllParentTask_LoadTest()
-        {
-            List<ParentTaskModel> parentTasks;
-            parentTasks = taskBusiness.GetParentTask();
-        }
-
-        [PerfBenchmark(Description = "--------NBench Result for GetTasks_LoadTest----------",
-                        NumberOfIterations = 2,
-                        RunMode = RunMode.Throughput,
-                        TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetTasks_LoadTest()
-        {
-            List<TaskModel> tasks;
-            tasks = taskBusiness.GetAllTasks();
-        }
-
-        [PerfBenchmark(Description = "--------NBench Result for GetTaskById_LoadTest----------",
-                                                      NumberOfIterations = 2,
-                                                      RunMode = RunMode.Throughput,
-                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetTaskById_LoadTest()
-        {
-            taskBusiness.GetTaskById(1);
-        }
 
         [PerfBenchmark(Description = "--------NBench Result for AddTask_LoadTest----------",
                                                         NumberOfIterations = 2,
@@ -154,6 +121,41 @@ namespace ProjectManagerNBenchLoadTest
 
 
             taskBusiness.UpdateTask(task);
+        }
+
+
+        [PerfBenchmark(Description = "--------NBench Result for GetAllParentTask_LoadTest----------",
+                                                      NumberOfIterations = 2,
+                                                      RunMode = RunMode.Throughput,
+                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
+
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+
+        public void GetAllParentTask_LoadTest()
+        {
+            List<ParentTaskModel> parentTasks;
+            parentTasks = taskBusiness.GetParentTask();
+        }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetTasks_LoadTest----------",
+                        NumberOfIterations = 2,
+                        RunMode = RunMode.Throughput,
+                        TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetTasks_LoadTest()
+        {
+            List<TaskModel> tasks;
+            tasks = taskBusiness.GetAllTasks();
+        }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetTaskById_LoadTest----------",
+                                                      NumberOfIterations = 2,
+                                                      RunMode = RunMode.Throughput,
+                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetTaskById_LoadTest()
+        {
+            taskBusiness.GetTaskById(1);
         }
 
         [PerfBenchmark(Description = "--------NBench Result for DeleteTask_LoadTest----------",
