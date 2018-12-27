@@ -114,11 +114,18 @@ namespace ProjectManagerDataLayer
             }
         }
 
-        public bool UpdateUserTaskId(int intTaskId, int intUserId)
+        public bool UpdateUserTaskId(int intTaskId, int intUserId, int intProjectId)
         {
             try
             {
-                User userUpdate = _dbProjectManager.Users.Where(a => a.Project_ID == intTaskId).FirstOrDefault();
+                User userUpdate = _dbProjectManager.Users.Where(a => a.Project_ID == intProjectId).FirstOrDefault();
+                if (userUpdate != null)
+                {
+                    userUpdate.Task_ID = null;
+                    _dbProjectManager.Entry(userUpdate).State = System.Data.Entity.EntityState.Modified;
+                    _dbProjectManager.SaveChanges();
+                }
+                userUpdate = _dbProjectManager.Users.Where(a => a.Task_ID == intTaskId).FirstOrDefault();
                 if (userUpdate != null)
                 {
                     userUpdate.Task_ID = null;

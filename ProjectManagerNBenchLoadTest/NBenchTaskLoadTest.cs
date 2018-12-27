@@ -115,8 +115,8 @@ namespace ProjectManagerNBenchLoadTest
                 TaskName = "Test Task by NBench - Edit",
                 StartDate = DateTime.Now.Date,
                 Priority = 15,
-                TaskId = 1
-
+                TaskId = 1,
+                ProjectId=1
             };
 
 

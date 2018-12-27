@@ -9,7 +9,7 @@ namespace ProjectManagerDataLayer
         bool InsertUser(User user);
         bool UpdateUser(User user);
         bool UpdateUserProjectId(int intProjectId, int intUserId);
-        bool UpdateUserTaskId(int intTaskId, int intUserId);
+        bool UpdateUserTaskId(int intTaskId, int intUserId, int intProjectId);
         bool DeleteUser(int intUserId);
     }
 }

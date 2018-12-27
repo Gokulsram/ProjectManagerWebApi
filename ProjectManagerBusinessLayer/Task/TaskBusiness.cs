@@ -55,7 +55,7 @@ namespace ProjectManagerBusinessLayer
             int intTaskId = _taskRepository.InsertTask(task);
             if (taskModel.UserId > 0 && intTaskId > 0)
             {
-                return _usersRepository.UpdateUserTaskId(intTaskId, taskModel.UserId);
+                return _usersRepository.UpdateUserTaskId(intTaskId, taskModel.UserId,taskModel.ProjectId);
             }
             return true;
         }
@@ -69,7 +69,7 @@ namespace ProjectManagerBusinessLayer
             int intTaskId = _taskRepository.UpdateTask(task);
             if (taskModel.UserId > 0 && intTaskId > 0)
             {
-                return _usersRepository.UpdateUserTaskId(intTaskId, taskModel.UserId);
+                return _usersRepository.UpdateUserTaskId(intTaskId, taskModel.UserId,taskModel.ProjectId);
             }
             return true;
         }
