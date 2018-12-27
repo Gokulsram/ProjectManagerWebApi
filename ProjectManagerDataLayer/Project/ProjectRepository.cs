@@ -27,7 +27,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -40,7 +40,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return project;
         }
@@ -54,7 +54,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return project;
         }
@@ -69,7 +69,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return 0;
+                throw ex;
             }
         }
 
@@ -88,7 +88,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return 0;
+                throw ex;
             }
         }
     }

@@ -25,7 +25,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -38,7 +38,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return users;
         }
@@ -52,7 +52,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return user;
         }
@@ -67,7 +67,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -87,7 +87,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -110,7 +110,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -133,7 +133,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

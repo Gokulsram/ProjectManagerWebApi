@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace ProjectManagerWebApi
 {
@@ -13,7 +14,8 @@ namespace ProjectManagerWebApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+            config.Services.Replace(typeof(IExceptionLogger), new UnhandledExceptionLogger());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

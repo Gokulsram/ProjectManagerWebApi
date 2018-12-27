@@ -28,7 +28,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -42,9 +42,9 @@ namespace ProjectManagerDataLayer
                 _dbTaskManager.SaveChanges();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -57,7 +57,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return task;
         }
@@ -71,7 +71,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return project;
         }
@@ -86,7 +86,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return 0;
+                throw ex;
             }
         }
 
@@ -100,7 +100,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return 0;
+                throw ex;
             }
         }
 
@@ -122,7 +122,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-                return 0;
+                throw ex;
             }
         }
 
@@ -135,7 +135,7 @@ namespace ProjectManagerDataLayer
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
             return task;
         }
