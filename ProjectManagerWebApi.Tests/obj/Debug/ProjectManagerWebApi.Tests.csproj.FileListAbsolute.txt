@@ -112,6 +112,7 @@ C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\Ent
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.dll
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.pdb
+C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\ApplicationInsights.config
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\NUnit3.TestAdapter.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\NUnit3.TestAdapter.pdb
@@ -181,6 +182,5 @@ C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\EntityFramework.SqlServer.xml
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\Unity.Container.pdb
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\Unity.Abstractions.pdb
-C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.pdb

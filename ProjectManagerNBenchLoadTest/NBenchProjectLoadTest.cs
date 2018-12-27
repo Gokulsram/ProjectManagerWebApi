@@ -83,7 +83,7 @@ namespace ProjectManagerNBenchLoadTest
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void GetProjectById_LoadTest()
         {
-            projectBusiness.GetProjectById(1);
+          ProjectModel projec =    projectBusiness.GetProjectById(1);
         }
 
         [PerfBenchmark(Description = "--------NBench Result for AddProject_LoadTest----------",
@@ -132,8 +132,6 @@ namespace ProjectManagerNBenchLoadTest
         {
             projectBusiness.DeleteProject(9);
         }
-
-
 
         [PerfCleanup]
         public void Cleanup()

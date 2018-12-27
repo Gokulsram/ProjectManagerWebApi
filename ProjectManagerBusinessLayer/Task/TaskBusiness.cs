@@ -53,7 +53,6 @@ namespace ProjectManagerBusinessLayer
         {
             Task task = Mapper.Map<Task>(taskModel);
             int intTaskId = _taskRepository.InsertTask(task);
-
             if (taskModel.UserId > 0 && intTaskId > 0)
             {
                 return _usersRepository.UpdateUserTaskId(intTaskId, taskModel.UserId);

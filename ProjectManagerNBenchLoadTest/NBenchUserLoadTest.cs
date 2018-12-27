@@ -94,7 +94,7 @@ namespace ProjectManagerNBenchLoadTest
                 FirstName = "First Name Test - Edit by NBench",
                 LastName = "Last Name Test -Edit  by NBench",
                 EmployeeId = 15,
-                UserId=9
+                UserId = 9
             };
 
             userBusiness.UpdateUser(user);

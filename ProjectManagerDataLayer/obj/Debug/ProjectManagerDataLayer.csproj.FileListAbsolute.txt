@@ -27,6 +27,5 @@ C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\bin\Debug\En
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\bin\Debug\EntityFramework.xml
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\bin\Debug\EntityFramework.SqlServer.xml
-C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerDataLayer\obj\Debug\ProjectManagerDataLayer.pdb

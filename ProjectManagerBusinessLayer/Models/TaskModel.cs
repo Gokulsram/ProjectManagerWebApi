@@ -11,7 +11,7 @@ namespace ProjectManagerBusinessLayer
 
         public int TaskId { get; set; }
         public string ParentTaskId { get; set; }
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
         public string TaskName { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }

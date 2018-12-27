@@ -1,12 +1,12 @@
 ﻿using NBench;
 using System.Collections.Generic;
-using System.Web;
 using ProjectManagerBusinessLayer;
 using ProjectManagerDataLayer;
 using AutoMapper;
 using System;
+using System.Web;
 
-//[assembly: PreApplicationStartMethod(typeof(NBenchLoadTest.NBenchLoadTest), "Start")]
+[assembly: PreApplicationStartMethod(typeof(ProjectManagerNBenchLoadTest.NBenchTaskLoadTest), "Start")]
 namespace ProjectManagerNBenchLoadTest
 {
     public class NBenchTaskLoadTest
@@ -145,10 +145,10 @@ namespace ProjectManagerNBenchLoadTest
         {
             TaskModel task = new TaskModel
             {
-                TaskName = "Test Task by NBench",
+                TaskName = "Test Task by NBench - Edit",
                 StartDate = DateTime.Now.Date,
                 Priority = 15,
-                TaskId = 9
+                TaskId = 1
 
             };
 
@@ -163,7 +163,7 @@ namespace ProjectManagerNBenchLoadTest
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void DeleteTask_LoadTest()
         {
-            taskBusiness.DeleteTask(1);
+            taskBusiness.DeleteTask(960);
         }
 
         [PerfBenchmark(Description = "--------NBench Result for EndTask----------",
@@ -173,7 +173,7 @@ namespace ProjectManagerNBenchLoadTest
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void EndTask_LoadTest()
         {
-            taskBusiness.EndTask(9);
+            taskBusiness.EndTask(960);
         }
 
         [PerfCleanup]
