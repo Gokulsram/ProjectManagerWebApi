@@ -96,5 +96,17 @@ namespace ProjectManagerWebApi.Tests
         }
 
 
+        [Test, Order(8)]
+        public void AddParentTask_Test()
+        {
+            mock.Setup(setup => setup.AddParentTask(It.IsAny<ParentTaskModel>())).Returns(true);
+            TaskController taskController = new TaskController(mock.Object);
+
+            bool isResult = taskController.Post(new ParentTaskModel());
+
+            Assert.AreEqual(true, isResult);
+        }
+
+
     }
 }
