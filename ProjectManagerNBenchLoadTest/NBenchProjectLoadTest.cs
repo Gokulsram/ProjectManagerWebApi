@@ -1,4 +1,4 @@
-﻿using NBench;
+using NBench;
 using System.Collections.Generic;
 using System.Web;
 using ProjectManagerBusinessLayer;
@@ -66,25 +66,6 @@ namespace ProjectManagerNBenchLoadTest
 
         }
 
-        [PerfBenchmark(Description = "--------NBench Result for GetAllProjects_LoadTest----------",
-                         NumberOfIterations = 2,
-                         RunMode = RunMode.Throughput,
-                         TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetAllProjects_LoadTest()
-        {
-            List<ProjectModel> projectModel = projectBusiness.GetAllProjects();
-        }
-
-        [PerfBenchmark(Description = "--------NBench Result for GetProjectById_LoadTest----------",
-                                                      NumberOfIterations = 2,
-                                                      RunMode = RunMode.Throughput,
-                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetProjectById_LoadTest()
-        {
-          ProjectModel projec =    projectBusiness.GetProjectById(1);
-        }
 
         [PerfBenchmark(Description = "--------NBench Result for AddProject_LoadTest----------",
                                                         NumberOfIterations = 2,
@@ -122,6 +103,27 @@ namespace ProjectManagerNBenchLoadTest
 
             projectBusiness.UpdateProject(project);
         }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetAllProjects_LoadTest----------",
+                         NumberOfIterations = 2,
+                         RunMode = RunMode.Throughput,
+                         TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetAllProjects_LoadTest()
+        {
+            List<ProjectModel> projectModel = projectBusiness.GetAllProjects();
+        }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetProjectById_LoadTest----------",
+                                                      NumberOfIterations = 2,
+                                                      RunMode = RunMode.Throughput,
+                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetProjectById_LoadTest()
+        {
+          ProjectModel projec =    projectBusiness.GetProjectById(1);
+        }
+
 
         [PerfBenchmark(Description = "--------NBench Result for DeleteProject_LoadTest----------",
                                                       NumberOfIterations = 2,
