@@ -1,4 +1,4 @@
-﻿using NBench;
+using NBench;
 using System.Collections.Generic;
 using System.Web;
 using ProjectManagerBusinessLayer;
@@ -45,26 +45,6 @@ namespace ProjectManagerNBenchLoadTest
         }
 
 
-        [PerfBenchmark(Description = "--------NBench Result for GetAllUsers_LoadTest----------",
-                        NumberOfIterations = 2,
-                        RunMode = RunMode.Throughput,
-                        TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetAllUsers_LoadTest()
-        {
-            List<UsersModel> tasks = userBusiness.GetAllUsers();
-        }
-
-        [PerfBenchmark(Description = "--------NBench Result for GetUserById_LoadTest----------",
-                                                      NumberOfIterations = 2,
-                                                      RunMode = RunMode.Throughput,
-                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
-        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
-        public void GetUserById_LoadTest()
-        {
-            userBusiness.GetUserById(1);
-        }
-
         [PerfBenchmark(Description = "--------NBench Result for AddUser_LoadTest----------",
                                                         NumberOfIterations = 2,
                                                         RunMode = RunMode.Throughput,
@@ -98,6 +78,26 @@ namespace ProjectManagerNBenchLoadTest
             };
 
             userBusiness.UpdateUser(user);
+        }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetAllUsers_LoadTest----------",
+                        NumberOfIterations = 2,
+                        RunMode = RunMode.Throughput,
+                        TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetAllUsers_LoadTest()
+        {
+            List<UsersModel> tasks = userBusiness.GetAllUsers();
+        }
+
+        [PerfBenchmark(Description = "--------NBench Result for GetUserById_LoadTest----------",
+                                                      NumberOfIterations = 2,
+                                                      RunMode = RunMode.Throughput,
+                                                      TestMode = TestMode.Measurement, SkipWarmups = false)]
+        [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
+        public void GetUserById_LoadTest()
+        {
+            userBusiness.GetUserById(1);
         }
 
         [PerfBenchmark(Description = "--------NBench Result for DeleteUser_LoadTest----------",
