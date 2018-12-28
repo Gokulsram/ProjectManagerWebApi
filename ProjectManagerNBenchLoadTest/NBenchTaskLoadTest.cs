@@ -97,7 +97,8 @@ namespace ProjectManagerNBenchLoadTest
             {
                 TaskName = "Test Task by NBench",
                 StartDate = DateTime.Now.Date,
-                Priority = 15
+                Priority = 15,
+                ProjectId=1
             };
 
             taskBusiness.InsertTask(task);
@@ -165,7 +166,7 @@ namespace ProjectManagerNBenchLoadTest
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void DeleteTask_LoadTest()
         {
-            taskBusiness.DeleteTask(960);
+            taskBusiness.DeleteTask(1);
         }
 
         [PerfBenchmark(Description = "--------NBench Result for EndTask----------",
@@ -175,7 +176,7 @@ namespace ProjectManagerNBenchLoadTest
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void EndTask_LoadTest()
         {
-            taskBusiness.EndTask(960);
+            taskBusiness.EndTask(1);
         }
 
         [PerfCleanup]

@@ -74,7 +74,7 @@ namespace ProjectManagerNBenchLoadTest
                 FirstName = "First Name Test - Edit by NBench",
                 LastName = "Last Name Test -Edit  by NBench",
                 EmployeeId = 15,
-                UserId = 9
+                UserId = 1
             };
 
             userBusiness.UpdateUser(user);
@@ -101,13 +101,13 @@ namespace ProjectManagerNBenchLoadTest
         }
 
         [PerfBenchmark(Description = "--------NBench Result for DeleteUser_LoadTest----------",
-                                                      NumberOfIterations = 2,
+                                                      NumberOfIterations = 1,
                                                       RunMode = RunMode.Throughput,
                                                       TestMode = TestMode.Measurement, SkipWarmups = false)]
         [ElapsedTimeAssertion(MaxTimeMilliseconds = 1000)]
         public void DeleteUser_LoadTest()
         {
-            userBusiness.DeleteUser(9);
+            userBusiness.DeleteUser(2);
         }
 
         [PerfCleanup]

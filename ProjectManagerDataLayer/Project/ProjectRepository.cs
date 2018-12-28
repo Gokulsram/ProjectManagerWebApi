@@ -21,9 +21,13 @@ namespace ProjectManagerDataLayer
             try
             {
                 Project project = _dbProjectManager.Projects.Where(a => a.Project_ID == intProjectId).FirstOrDefault();
-                _dbProjectManager.Projects.Remove(project);
-                _dbProjectManager.SaveChanges();
-                return true;
+                if (project != null)
+                {
+                    _dbProjectManager.Projects.Remove(project);
+                    _dbProjectManager.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -78,13 +82,17 @@ namespace ProjectManagerDataLayer
             try
             {
                 Project projectUpdate = _dbProjectManager.Projects.Where(a => a.Project_ID == project.Project_ID).FirstOrDefault();
-                projectUpdate.StartDate = project.StartDate;
-                projectUpdate.EndDate = project.EndDate;
-                projectUpdate.Priority = project.Priority;
-                projectUpdate.Project1 = project.Project1;
-                _dbProjectManager.Entry(projectUpdate).State = System.Data.Entity.EntityState.Modified;
-                _dbProjectManager.SaveChanges();
-                return projectUpdate.Project_ID;
+                if (projectUpdate != null)
+                {
+                    projectUpdate.StartDate = project.StartDate;
+                    projectUpdate.EndDate = project.EndDate;
+                    projectUpdate.Priority = project.Priority;
+                    projectUpdate.Project1 = project.Project1;
+                    _dbProjectManager.Entry(projectUpdate).State = System.Data.Entity.EntityState.Modified;
+                    _dbProjectManager.SaveChanges();
+                    return projectUpdate.Project_ID;
+                }
+                return 0;
             }
             catch (Exception ex)
             {

@@ -19,9 +19,13 @@ namespace ProjectManagerDataLayer
             try
             {
                 User user = _dbProjectManager.Users.Where(a => a.User_ID == intUserId).FirstOrDefault();
-                _dbProjectManager.Users.Remove(user);
-                _dbProjectManager.SaveChanges();
-                return true;
+                if (user != null)
+                {
+                    _dbProjectManager.Users.Remove(user);
+                    _dbProjectManager.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -76,14 +80,19 @@ namespace ProjectManagerDataLayer
             try
             {
                 User userUpdate = _dbProjectManager.Users.Where(a => a.User_ID == user.User_ID).FirstOrDefault();
-                userUpdate.FirstName = user.FirstName;
-                userUpdate.LastName = user.LastName;
-                userUpdate.Employee_ID = user.Employee_ID;
-                userUpdate.Task_ID = user.Task_ID;
-                userUpdate.Project_ID = user.Project_ID;
-                _dbProjectManager.Entry(userUpdate).State = System.Data.Entity.EntityState.Modified;
-                _dbProjectManager.SaveChanges();
-                return true;
+                if (userUpdate != null)
+                {
+                    userUpdate.FirstName = user.FirstName;
+                    userUpdate.LastName = user.LastName;
+                    userUpdate.Employee_ID = user.Employee_ID;
+                    userUpdate.Task_ID = user.Task_ID;
+                    userUpdate.Project_ID = user.Project_ID;
+                    _dbProjectManager.Entry(userUpdate).State = System.Data.Entity.EntityState.Modified;
+                    _dbProjectManager.SaveChanges();
+                    return true;
+                }
+                return false;
+
             }
             catch (Exception ex)
             {

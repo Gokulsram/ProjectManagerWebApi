@@ -34,7 +34,6 @@ C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\En
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.dll
 C:\Gokul_FSE_Final\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.pdb
-C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\ProjectManagerBusinessLayer.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\ProjectManagerBusinessLayer.pdb
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\AutoMapper.dll
@@ -49,5 +48,6 @@ C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debu
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\System.ValueTuple.xml
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\EntityFramework.xml
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerBusinessLayer\obj\Debug\ProjectManagerBusinessLayer.pdb

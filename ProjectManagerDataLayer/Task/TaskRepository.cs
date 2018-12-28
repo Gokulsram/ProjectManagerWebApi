@@ -22,9 +22,13 @@ namespace ProjectManagerDataLayer
             try
             {
                 Task task = _dbTaskManager.Tasks.Where(a => a.Task_ID == intTaskId).FirstOrDefault();
-                _dbTaskManager.Tasks.Remove(task);
-                _dbTaskManager.SaveChanges();
-                return true;
+                if (task != null)
+                {
+                    _dbTaskManager.Tasks.Remove(task);
+                    _dbTaskManager.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -37,10 +41,14 @@ namespace ProjectManagerDataLayer
             try
             {
                 Task task = _dbTaskManager.Tasks.Where(a => a.Task_ID == intTaskId).FirstOrDefault();
-                task.Status = STATUS;
-                _dbTaskManager.Entry(task).State = System.Data.Entity.EntityState.Modified;
-                _dbTaskManager.SaveChanges();
-                return true;
+                if (task != null)
+                {
+                    task.Status = STATUS;
+                    _dbTaskManager.Entry(task).State = System.Data.Entity.EntityState.Modified;
+                    _dbTaskManager.SaveChanges();
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
@@ -109,16 +117,20 @@ namespace ProjectManagerDataLayer
             try
             {
                 Task taskUpdate = _dbTaskManager.Tasks.Where(a => a.Task_ID == task.Task_ID).FirstOrDefault();
-                taskUpdate.Parent_ID = task.Parent_ID;
-                taskUpdate.Project_ID = task.Project_ID;
-                taskUpdate.Task1 = task.Task1;
-                taskUpdate.Start_Date = task.Start_Date;
-                taskUpdate.End_Date = task.End_Date;
-                taskUpdate.Priority = task.Priority;
-                taskUpdate.Status = task.Status;
-                _dbTaskManager.Entry(taskUpdate).State = System.Data.Entity.EntityState.Modified;
-                _dbTaskManager.SaveChanges();
-                return taskUpdate.Task_ID;
+                if (taskUpdate != null)
+                {
+                    taskUpdate.Parent_ID = task.Parent_ID;
+                    taskUpdate.Project_ID = task.Project_ID;
+                    taskUpdate.Task1 = task.Task1;
+                    taskUpdate.Start_Date = task.Start_Date;
+                    taskUpdate.End_Date = task.End_Date;
+                    taskUpdate.Priority = task.Priority;
+                    taskUpdate.Status = task.Status;
+                    _dbTaskManager.Entry(taskUpdate).State = System.Data.Entity.EntityState.Modified;
+                    _dbTaskManager.SaveChanges();
+                    return taskUpdate.Task_ID;
+                }
+                return 0;
             }
             catch (Exception ex)
             {

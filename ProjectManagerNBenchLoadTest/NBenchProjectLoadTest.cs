@@ -96,7 +96,7 @@ namespace ProjectManagerNBenchLoadTest
                 ProjectName = "Update Project for NBench",
                 StartDate = DateTime.Now.Date,
                 Priority = 15,
-                ProjectId = 9
+                ProjectId = 1
 
             };
 
