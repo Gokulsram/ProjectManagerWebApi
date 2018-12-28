@@ -184,3 +184,5 @@ C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.csprojResolveAssemblyReference.cache
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.dll
 C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\obj\Debug\ProjectManagerWebApi.Tests.pdb
+C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\WebActivatorEx.dll
+C:\Gokul_FSE_Final\Git\ProjectManagerWebApi\ProjectManagerWebApi.Tests\bin\Debug\Swashbuckle.Core.dll
